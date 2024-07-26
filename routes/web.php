@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +21,18 @@ Route::get('/', function () {
     return view('welcome',compact('arrayCode'));
 });
 Route::get('/about',[Controller::class,'index']);
+
+Route::get('/get-session',function ()
+{
+    $session = Session::all();
+
+    echo "<pre>";
+    print_r ($session);
+
+});
+
+Route::get('/set-session', function (Request $request)
+{
+    $request->session()->put('name', 'Atul');
+    return redirect('/get-session');
+});
