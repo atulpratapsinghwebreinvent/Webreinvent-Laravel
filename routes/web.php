@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,4 @@ Route::get('/', function () {
     $arrayCode = ['This','is the','Atul Code'];
     return view('welcome',compact('arrayCode'));
 });
+Route::get('/about',[Controller::class,'index']);
