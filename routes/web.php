@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $arrayCode = ['This','is the','Atul Code'];
+    return view('welcome',compact('arrayCode'));
 });
