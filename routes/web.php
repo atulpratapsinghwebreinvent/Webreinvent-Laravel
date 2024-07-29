@@ -36,3 +36,5 @@ Route::get('/set-session', function (Request $request)
     $request->session()->put('name', 'Atul');
     return redirect('/get-session');
 });
+
+Route::get('/events', [Controller::class, 'index']);
